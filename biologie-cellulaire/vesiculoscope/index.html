@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="Explorez le trafic vésiculaire : COPII, COPI, clathrine, KDEL, M6P et LDL. Une cellule interactive et quatre cargaisons, avec références au CM5 de Lyon Sud et précisions scientifiques sourcées.">
+  <title>VésiculoScope — Trafic vésiculaire · PASS Lyon Sud</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/brand.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./content.js" defer></script>
+  <script src="./scene.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#simulator">Aller au simulateur</a>
+  <header class="topbar">
+    <a class="brand" href="../../" aria-label="PASS Lyon Sud — Accueil"><img src="../../assets/brand.svg" width="36" height="36" alt=""><span>PASS Lyon Sud<small>Biologie cellulaire</small></span></a>
+    <nav aria-label="Retour à la plateforme"><a href="../../">Accueil</a><a href="../">← Biologie cellulaire</a></nav>
+    <button class="source-button" id="sources-open" type="button">Sources &amp; CM5</button>
+  </header>
+  <div class="module-heading"><div><p class="eyebrow">Du compartiment à la cargaison</p><h1>VésiculoScope <span>Trafic vésiculaire</span></h1></div><p class="version-note">Phase 1 <span>·</span> Explorer &amp; comprendre</p></div>
+  <noscript><p class="no-script">Le simulateur utilise JavaScript. Les pages générales de la plateforme restent accessibles par les liens de navigation.</p></noscript>
+  <main class="workspace" id="simulator" data-ready="false">
+    <aside class="cargo-panel" aria-labelledby="cargo-title">
+      <div class="panel-title"><h2 id="cargo-title">Choisir une cargaison</h2><span>4 parcours</span></div>
+      <div id="cargo-options" class="cargo-options" role="group" aria-label="Cargaisons à suivre"></div>
+      <div class="sidebar-notes"><p class="eyebrow">Un même principe</p><ol><li><b>Former</b> et sélectionner</li><li><b>Transporter</b> et adresser</li><li><b>Fusionner</b> et livrer</li></ol><p>Suivez le point plein pour le cargo. Le losange creux identifie un récepteur recyclé.</p><a href="#roadmap" id="scope-open">Périmètre et modules à venir</a></div>
+    </aside>
+    <section class="viewer" aria-labelledby="viewer-title">
+      <div class="viewer-heading"><div><p class="eyebrow">Carte cellulaire · Schéma 2,5D</p><h2 id="viewer-title">Une cellule, plusieurs destinations.</h2></div><button id="viewer-expand" type="button" aria-pressed="false" aria-label="Agrandir la scène cellulaire">Agrandir</button></div>
+      <div class="scene-toolbar">
+        <div class="camera-controls" role="group" aria-label="Caméra"><button id="zoom-in" type="button" aria-label="Agrandir la cellule">+</button><button id="zoom-out" type="button" aria-label="Réduire la cellule">−</button><button id="camera-reset" type="button">Recentrer</button><output id="zoom-value" aria-label="Zoom de la cellule">100 %</output></div>
+        <details class="display-menu" id="display-menu"><summary>Affichage</summary><div class="display-content"><label class="switch-row" for="labels-toggle"><span>Étiquettes</span><input id="labels-toggle" type="checkbox" checked></label><label for="compartment-select">Choisir un compartiment</label><select id="compartment-select"></select><div id="layer-options" class="layer-options"></div><button class="outline-button" id="display-reset" type="button">Réafficher les structures</button></div></details>
+      </div>
+      <div class="scene" id="scene-wrap">
+        <div class="scene-hud"><span id="scene-signal">Choisissez une cargaison</span><span id="location-label"></span></div>
+        <svg id="cell-scene" viewBox="0 0 1030 740" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Cellule interactive schématique. Glisser pour déplacer, pincer ou utiliser les boutons pour zoomer. Sélectionnez un compartiment pour ouvrir sa fiche." tabindex="0"></svg>
+        <div class="scene-caption"><span>Positions, proportions et durées schématiques.</span><span>Glisser · Pincer · Toucher une structure</span></div>
+      </div>
+      <div class="map-toolbar" role="group" aria-label="Voies visibles sur la carte"><button type="button" data-map="selected" aria-pressed="true">Ce parcours</button><button type="button" data-map="all" aria-pressed="false">Toutes les voies</button><button class="coat-chip" type="button" data-coat="copii" aria-pressed="false"><i class="copii"></i>COPII</button><button class="coat-chip" type="button" data-coat="copi" aria-pressed="false"><i class="copi"></i>COPI</button><button class="coat-chip" type="button" data-coat="clathrin" aria-pressed="false"><i class="clathrin"></i>Clathrine</button></div>
+      <div class="player" aria-label="Commandes du parcours">
+        <div class="player-actions"><button type="button" id="previous" aria-label="Étape précédente">Précédente</button><button class="play-button" type="button" id="play" aria-pressed="false">Lecture</button><button type="button" id="next" aria-label="Étape suivante">Suivante</button><label class="speed-label" for="speed">Vitesse<select id="speed"><option value="0.5">× 0,5</option><option value="1" selected>× 1</option><option value="1.5">× 1,5</option><option value="2">× 2</option></select></label></div>
+        <div class="timeline"><span id="step-count">Étape 1</span><input type="range" id="step-progress" min="0" max="100" value="0" aria-label="Progression dans l’étape actuelle"><button type="button" id="restart" aria-label="Recommencer le parcours">Recommencer</button></div>
+      </div>
+    </section>
+    <aside class="inspector" aria-label="Explications contextuelles">
+      <div class="inspector-tabs" role="tablist" aria-label="Type de fiche"><button id="tab-step" role="tab" type="button" aria-selected="true" aria-controls="step-panel">Le trajet</button><button id="tab-organelle" role="tab" type="button" aria-selected="false" aria-controls="organelle-panel" tabindex="-1">Le compartiment</button></div>
+      <section id="step-panel" role="tabpanel" aria-labelledby="tab-step" tabindex="0">
+        <p class="inspector-eyebrow" id="scenario-name"></p><p class="step-phase" id="step-phase"></p><h2 id="step-title" aria-live="polite"></h2><p class="explanation" id="step-body"></p>
+        <div class="source-chips" id="step-sources" aria-label="Pages du CM5 pour cette étape"></div>
+        <div class="learning-buttons"><button id="why-toggle" type="button" aria-expanded="false" aria-controls="why-content">Pourquoi ?</button><button id="trap-toggle" type="button" aria-expanded="false" aria-controls="trap-content">Piège de QCM</button></div>
+        <div id="why-content" class="learning-note" hidden><h3>Le sens du mécanisme</h3><p id="step-why"></p></div><div id="trap-content" class="learning-note trap-note" hidden><h3>Point de vigilance</h3><p id="step-trap"></p><small>Repère pédagogique original · pas une annale.</small></div>
+        <div id="external-note" class="external-note" hidden><h3>Précision scientifique externe</h3><p id="external-text"></p><div id="external-links"></div></div>
+        <div class="topology-note"><span class="cargo-symbol" aria-hidden="true"></span><p id="cargo-topology"></p></div>
+        <p class="inspector-footnote">Les étapes sont séparées pour apprendre ; les mécanismes réels sont coordonnés et dynamiques.</p>
+      </section>
+      <section id="organelle-panel" role="tabpanel" aria-labelledby="tab-organelle" tabindex="0" hidden><p class="inspector-eyebrow">Repère dans la cellule</p><h2 id="organelle-title"></h2><p class="explanation" id="organelle-body"></p><div class="source-chips" id="organelle-sources"></div><div class="learning-note"><h3>À distinguer</h3><p id="organelle-trap"></p></div><div class="organelle-settings"><label class="switch-row" for="organelle-visible"><span>Structure visible</span><input id="organelle-visible" type="checkbox" checked></label><label for="organelle-opacity">Opacité du dessin <output id="opacity-value">100 %</output></label><input id="organelle-opacity" type="range" min="15" max="100" value="100"><button class="outline-button" type="button" id="focus-organelle">Centrer ce compartiment</button></div><div class="external-note" id="organelle-external" hidden></div></section>
+    </aside>
+  </main>
+  <p id="app-status" class="sr-only" role="status" aria-live="polite"></p>
+  <dialog id="sources-dialog" aria-labelledby="sources-title"><div class="dialog-top"><div><p class="eyebrow">Références &amp; limites</p><h2 id="sources-title">Apprendre avec les sources.</h2></div><button id="sources-close" type="button" aria-label="Fermer les sources">Fermer</button></div>
+    <section class="primary-source"><span class="reference-tag">Référence pédagogique principale</span><h3>Fiche de synthèse CM5 · Trafic vésiculaire</h3><p>Document fourni de huit pages, portant la mention « D’après le cours du Pr Buffoni – Lyon Sud ». Les renvois visent cette fiche, sans la présenter comme un support officiel relu ou validé par l’enseignant.</p><p id="source-page-note">Pages numérotées 1 à 8.</p><label class="file-label" for="cm5-file">Associer ma fiche PDF, sur cet appareil<input id="cm5-file" type="file" accept="application/pdf,.pdf"></label><p class="file-status" id="pdf-status">Aucun envoi : le PDF reste sur votre appareil. La version est vérifiée avant d’activer les renvois.</p><a class="pdf-link" id="pdf-page-link" target="_blank" rel="noopener" hidden>Ouvrir la page du CM5</a></section>
+    <section class="source-limits"><h3>Ce que représente le simulateur</h3><p>Une carte de flux à l’échelle de la cellule, en 2,5D. Les tailles, distances, positions, vitesses, formes et couleurs ne sont pas mesurables. La progression dans le Golgi ne choisit pas un modèle exclusif de transport. Les routes endosomales sont simplifiées ; le cargo et le récepteur recyclé sont distingués.</p><p><strong>Point corrigé :</strong> la scission « par la dynamine » formulée globalement en page 2 n’est pas généralisée aux voies COPI/COPII. Les précisions qui dépassent la fiche sont signalées dans les explications.</p></section>
+    <section><h3>Compléments scientifiques</h3><p class="muted">Notices de recherches originales et manuels de référence. Chaque précision cite son complément ; les liens ouvrent le site de l’éditeur.</p><ul id="reference-list" class="reference-list"></ul></section>
+    <section class="roadmap" id="roadmap"><h3>Les prochaines phases</h3><p>Ces fonctions ne sont pas encore proposées dans cette version.</p><div id="roadmap-list"></div></section>
+  </dialog>
+</body>
+</html>

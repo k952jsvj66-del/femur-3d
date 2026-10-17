@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: ["feat/pass-lyon-sud-platform"]
+    branches: ["feat/pass-lyon-sud-platform", "feat/vesiculoscope-phase-1"]
   workflow_dispatch:
 
 permissions:
@@ -31,3 +31,30 @@ jobs:
           Path('/tmp/osteoscope-check.js').write_text(script, encoding='utf-8')
           PY
           node --check /tmp/osteoscope-check.js
+      - name: Validate VesiculoScope content and JavaScript
+        run: |
+          node --check biologie-cellulaire/vesiculoscope/content.js
+          node --check biologie-cellulaire/vesiculoscope/scene.js
+          node --check biologie-cellulaire/vesiculoscope/app.js
+          node scripts/check_vesiculoscope.cjs
+
+  vesiculoscope-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install browser test tools
+        run: |
+          python -m pip install playwright==1.62.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise VesiculoScope at the Pages project path
+        run: python scripts/vesiculoscope_qa.py --output-dir test-results/vesiculoscope
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vesiculoscope-browser-results
+          path: test-results/vesiculoscope

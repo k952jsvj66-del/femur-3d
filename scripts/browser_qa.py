@@ -138,7 +138,7 @@ def main():
     server = ThreadingHTTPServer(('127.0.0.1', 0), SiteServer)
     server.baseline = baseline
     server.files = {}
-    for file in list(ROOT.rglob('*.html')) + list((ROOT / 'assets').glob('*')):
+    for file in sorted({p for extension in ('*.html','*.js','*.css','*.svg') for p in ROOT.rglob(extension) if '.git' not in p.parts}):
         rel = file.relative_to(ROOT).as_posix()
         server.files['/femur-3d/' + rel] = file
         if file.name == 'index.html':
