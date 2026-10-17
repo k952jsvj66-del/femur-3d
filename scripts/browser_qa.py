@@ -4,6 +4,7 @@
 Requires Playwright and a browser. No site dependencies or production build.
 """
 import argparse
+from datetime import datetime, timezone
 from hashlib import sha256
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -17,7 +18,7 @@ from urllib.parse import urlsplit, unquote
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = json.loads((ROOT / 'docs/osteoscope-preservation.json').read_text())
+MANIFEST = json.loads((ROOT / 'docs/osteoscope-preservation.json').read_text(encoding='utf-8'))
 PAGES = ['', 'biologie-cellulaire/', 'histologie/', 'embryologie/', 'qcm-annales/']
 VIEWPORTS = [(1366, 900), (1194, 834), (1024, 768), (834, 1194), (768, 1024), (390, 844), (320, 800)]
 
@@ -147,7 +148,21 @@ def main():
     host = f'http://127.0.0.1:{server.server_port}'
     base = host + '/femur-3d/'
     errors, responses = [], []
-    report = {'browser': args.browser, 'viewports': [], 'routes': PAGES, 'project_base': '/femur-3d/'}
+    report_path = output / f'{args.browser}-report.json'
+    report = {
+        'status': 'running',
+        'started_at_utc': datetime.now(timezone.utc).isoformat(),
+        'browser': args.browser,
+        'viewports': [],
+        'routes': PAGES,
+        'project_base': '/femur-3d/',
+        'input_sha256': {
+            str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()
+            for path in sorted(set(server.files.values()) | {Path(__file__).resolve(), ROOT / 'scripts/check_site.py'})
+        },
+    }
+    # Replace any previous result immediately, including when a browser fails to launch.
+    report_path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     try:
         with sync_playwright() as p:
             options = {'headless': True}
@@ -157,6 +172,7 @@ def main():
             elif args.executable:
                 options['executable_path'] = args.executable
             browser = getattr(p, args.browser).launch(**options)
+            report['browser_version'] = browser.version
             context = browser.new_context(viewport={'width': 1366, 'height': 900}, device_scale_factor=1, has_touch=True, reduced_motion='reduce')
             page = context.new_page()
             page.on('pageerror', lambda error: errors.append(str(error)))
@@ -188,6 +204,13 @@ def main():
                 plain_page.wait_for_url(base)
             plain.close()
             report['navigation_without_javascript'] = True
+            page.goto(base)
+            page.keyboard.press('Tab')
+            assert page.locator('.skip-link').evaluate('el => el === document.activeElement')
+            assert 0 <= page.locator('.skip-link').bounding_box()['y'] <= 20
+            page.keyboard.press('Enter')
+            page.wait_for_url(base + '#contenu')
+            report['keyboard_skip_link'] = True
             print('PASS 35 responsive page views, touch targets, images and navigation without JavaScript', flush=True)
 
             # Compare identical source running directly vs through the new wrapper.
@@ -210,6 +233,7 @@ def main():
                 assert before[key] == after[key], f'Original/wrapped mismatch at {key}: states match={before[key]["state"] == after[key]["state"]}, pixels match={before[key]["pixels_sha256"] == after[key]["pixels_sha256"]}'
             report['osteoscope_equivalent_scenarios'] = list(before)
             report['canvas_pixel_hashes_match'] = True
+            report['osteoscope_canvas_sha256'] = {key: value['pixels_sha256'] for key, value in after.items()}
             print(f'PASS {len(before)} original/integrated scenarios: identical state and rendered canvas pixels', flush=True)
             original.close()
 
@@ -270,9 +294,17 @@ def main():
             report['page_errors'] = errors
             report['http_errors'] = bad
             browser.close()
-        (output / f'{args.browser}-report.json').write_text(json.dumps(report, indent=2) + '\n')
+        report['status'] = 'passed'
         print('PASS viewer resize, drag rotation, controls and full-page fallback; no JS/HTTP errors', flush=True)
+    except Exception as error:
+        report['status'] = 'failed'
+        report['failure'] = {'type': type(error).__name__, 'message': str(error)}
+        raise
     finally:
+        if report['status'] == 'running':
+            report['status'] = 'interrupted'
+        report['finished_at_utc'] = datetime.now(timezone.utc).isoformat()
+        report_path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
         server.shutdown()
         server.server_close()
 

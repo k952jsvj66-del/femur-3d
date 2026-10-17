@@ -44,7 +44,7 @@ class Document(HTMLParser):
 
 
 def check():
-    manifest = json.loads((ROOT / 'docs/osteoscope-preservation.json').read_text())
+    manifest = json.loads((ROOT / 'docs/osteoscope-preservation.json').read_text(encoding='utf-8'))
     original = ROOT / manifest['preserved_path']
     payload = original.read_bytes()
     assert len(payload) == manifest['bytes'], 'Preserved application size changed'
@@ -60,7 +60,7 @@ def check():
     assert all(key in geometry for key in ('outer', 'inner', 'yellow', 'red')), 'Missing geometry layers'
     print(f'PASS Osteoscope: {len(payload):,} unchanged bytes; SHA-256 {blob}')
 
-    pages = {path: Document(path.read_text()) for path in ROOT.rglob('*.html') if '.git' not in path.parts}
+    pages = {path: Document(path.read_text(encoding='utf-8')) for path in ROOT.rglob('*.html') if '.git' not in path.parts}
     checked = 0
     external = set()
     for path, document in pages.items():
@@ -93,7 +93,7 @@ def check():
     for route in ('', 'biologie-cellulaire', 'histologie', 'histologie/osteoscope', 'embryologie', 'qcm-annales'):
         assert (ROOT / route / 'index.html') in pages, f'Missing route {route}'
     platform = [path for path in pages if path != original]
-    assert all('<script' not in path.read_text() for path in platform), 'Platform must not require JavaScript'
+    assert all('<script' not in path.read_text(encoding='utf-8') for path in platform), 'Platform must not require JavaScript'
     size = sum(path.stat().st_size for path in platform) + sum(path.stat().st_size for path in (ROOT / 'assets').glob('*'))
     assert size < 100_000, f'Platform resources unexpectedly large: {size}'
     print(f'PASS {len(pages)} HTML documents; {checked} local links/assets/fragments; 5 valid SVG assets')

@@ -1,4 +1,6 @@
 {
+  "status": "passed",
+  "started_at_utc": "2026-10-17T12:40:19.648381+00:00",
   "browser": "chromium",
   "viewports": [
     {
@@ -59,7 +61,26 @@
     "qcm-annales/"
   ],
   "project_base": "/femur-3d/",
+  "input_sha256": {
+    "assets/brand.svg": "f3c8899a577e98bbe9604c2939b22381e9d1046dcafa14dd70d79432261f7734",
+    "assets/cellule.svg": "cb8dc447180b8ab9d66ea08d071aa50fddf11faa896a840963409b6019bd2ba5",
+    "assets/embryologie.svg": "c61dfdbdc54fff532c5361470b6290f087dbbd84c44af1f4b11a7eb822cd0ce3",
+    "assets/histologie.svg": "ba9414aed648d28cd9446a36896cea728b865dbd895cb8891dc546fae88ac1bf",
+    "assets/qcm.svg": "32fc57dd712f5c05335782b25ca014a9d65750699e9bb9b6ee01ef51f91f61c2",
+    "assets/styles.css": "8e49ca0edce1ee9885d01ef7b722d1bebdd5feae7e82b4609bd1147717caa8aa",
+    "biologie-cellulaire/index.html": "f7353e17dbcc3108f9de5520857bddc3e6bb2010efd163b30d0e09fc816d766b",
+    "embryologie/index.html": "4a9ff9249f84d803e14fdabb9b3b055db782e0e194a0e4103a7dd0fadf6cceb6",
+    "histologie/index.html": "e65d4edc52b1fa43e2643fcfd7fda85db8b9a151b43c853fc1d5f329869deb94",
+    "histologie/osteoscope/application.html": "2510d3635bf72a727715c5e8a1d338761622f63cf858bb3aa211c1b16b17d31c",
+    "histologie/osteoscope/index.html": "4fe1ef7017868677393e9033eef9d6719c29e41f0014b4e7e0bb9745175182e0",
+    "index.html": "c401b7cdedbf3c6191dc99bf0941afc0789c634f7e4e1dadd55be3eb2534696e",
+    "qcm-annales/index.html": "0a115f11076fbb6cccf8d4a4c74f52c99771fa706e9852cb4998059f755f87f4",
+    "scripts/browser_qa.py": "771b6c611da8b2188d3af0de014160fec07eee94b9c022b70da60dd43e957491",
+    "scripts/check_site.py": "068f4b7f70d85ef60bb0ac6fabd18e25a9da6aba2b862db0395926e2afeb2d15"
+  },
+  "browser_version": "154.0.8037.57",
   "navigation_without_javascript": true,
+  "keyboard_skip_link": true,
   "osteoscope_equivalent_scenarios": [
     "initial",
     "trans",
@@ -88,9 +109,37 @@
     "matrix"
   ],
   "canvas_pixel_hashes_match": true,
+  "osteoscope_canvas_sha256": {
+    "initial": "34f60b82ecc7af9a81449b7fa715fd988644ac04bfbef18d8b57c6f55b2f5aa2",
+    "trans": "3188323d29dab387363efb5b20d8c13844e8ba60008ce88d35d043fafc4785d7",
+    "sag": "a6eeda7d1b13a4bdcd7e98d0b04f59335845317f77fcfe5c89c34aa0296332fb",
+    "cor": "36311d4b5d7f83c4a5a84ca93a276709429cb65ad8e2c6e365c59c3a54e45b64",
+    "transparency": "075875e53fe28a6c726102a51c47e2d99956d27fcd34d724aa027809fb6c5377",
+    "layer": "453413aebed28266e336ce820cb71ee7dc7fecbfb94c2d04ed4f98c5fcd07ba5",
+    "tissue_cortex": "51abab8705668f1a27ac051e15e2ae5d544ab0d26382ed1094317bd50e95dd34",
+    "tissue_trabecular": "93fe102d2b15a3837296617af8ffd1b26de71cb1d603d05e7d1d2f241242ee72",
+    "tissue_periosteum": "0c29cecb84956944d67cda199a64785ae40f85d24db3a98950c4f95d305350bb",
+    "tissue_endosteum": "1f68d2b3a9ef553a80555e2219ae419382247c83eddccdaf4f6a9e25c591dc20",
+    "tissue_cartilage": "dd8833cde51a2b40c59ecfa0c0498110179e86feb98faf6863f60c719f950104",
+    "tissue_redmarrow": "a08656ad71338c147c75f185a7c29a221c3382492689c5e023d6276e4567ffd2",
+    "tissue_yellowmarrow": "2d6bd55b0634741ac12e3fa34b22720c0ad28ddaae33249c9026d0350acb3c7b",
+    "cell_osteocyte": "c7c8f5d366ce4656b0d29295a958dfe538d54f61c7cea32742ff2282487e4665",
+    "cell_osteoblast": "b35e7652812a8f7ca9836e2e15a7660a3830e4230cf268b2d67e31e20af4a30a",
+    "cell_osteoclast": "d9667a85dac263c79b5572cf262f3b9d44c51de4b584b1e3f2c71dd4b317aa9e",
+    "cell_lining": "b3d2c8e519db999f226a9709641b4bb97279e3efca5bdfedcc5a3400a7a56e72",
+    "cell_progenitor": "51864e7f5c449c8ba674dacb3d67243a916643cf221ddcaf5c4b644aba208fd6",
+    "cell_fibroblast": "6531c1fe199c214e00e416377a5b7edab8b3153d7286dd3a997be0854b46986d",
+    "cell_adipocyte": "f44a3afec64de1724c3adc547bc354de22122248ac23ce232f3ff07eff741102",
+    "cell_megakaryocyte": "425e0c0bb7474a97aecd14b5bd866ab94cd219abaa7d62ff412bf848a0048bff",
+    "cell_hematopoietic": "e9cdd074e63c45db7df61961d4463438f752b48eff86b5c3c401677cfb20ea4a",
+    "cell_endothelial": "61269acfcdae00c4463c8b84ea53c268ee1bb9dc4fbf8a4df4ba5d854cf4bae9",
+    "cell_chondrocyte": "748973fe9e61775e086bec8b24f174a7c95ae4d3d39ff97ba826d6b14be3be6b",
+    "matrix": "5df6c451e9437546626a3ae7593418a9d269946672917e3c65f52802f925d430"
+  },
   "emulated_touch_rotation_and_pinch": true,
   "navigation_to_and_from_osteoscope": true,
   "osteoscope_tablet_and_phone_layouts": 4,
   "page_errors": [],
-  "http_errors": []
+  "http_errors": [],
+  "finished_at_utc": "2026-10-17T12:42:13.077446+00:00"
 }

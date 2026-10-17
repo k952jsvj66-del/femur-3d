@@ -1,0 +1,36 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-17T12:42:08.431755+00:00",
+  "browser": "webkit",
+  "viewports": [],
+  "routes": [
+    "",
+    "biologie-cellulaire/",
+    "histologie/",
+    "embryologie/",
+    "qcm-annales/"
+  ],
+  "project_base": "/femur-3d/",
+  "input_sha256": {
+    "assets/brand.svg": "f3c8899a577e98bbe9604c2939b22381e9d1046dcafa14dd70d79432261f7734",
+    "assets/cellule.svg": "cb8dc447180b8ab9d66ea08d071aa50fddf11faa896a840963409b6019bd2ba5",
+    "assets/embryologie.svg": "c61dfdbdc54fff532c5361470b6290f087dbbd84c44af1f4b11a7eb822cd0ce3",
+    "assets/histologie.svg": "ba9414aed648d28cd9446a36896cea728b865dbd895cb8891dc546fae88ac1bf",
+    "assets/qcm.svg": "32fc57dd712f5c05335782b25ca014a9d65750699e9bb9b6ee01ef51f91f61c2",
+    "assets/styles.css": "8e49ca0edce1ee9885d01ef7b722d1bebdd5feae7e82b4609bd1147717caa8aa",
+    "biologie-cellulaire/index.html": "f7353e17dbcc3108f9de5520857bddc3e6bb2010efd163b30d0e09fc816d766b",
+    "embryologie/index.html": "4a9ff9249f84d803e14fdabb9b3b055db782e0e194a0e4103a7dd0fadf6cceb6",
+    "histologie/index.html": "e65d4edc52b1fa43e2643fcfd7fda85db8b9a151b43c853fc1d5f329869deb94",
+    "histologie/osteoscope/application.html": "2510d3635bf72a727715c5e8a1d338761622f63cf858bb3aa211c1b16b17d31c",
+    "histologie/osteoscope/index.html": "4fe1ef7017868677393e9033eef9d6719c29e41f0014b4e7e0bb9745175182e0",
+    "index.html": "c401b7cdedbf3c6191dc99bf0941afc0789c634f7e4e1dadd55be3eb2534696e",
+    "qcm-annales/index.html": "0a115f11076fbb6cccf8d4a4c74f52c99771fa706e9852cb4998059f755f87f4",
+    "scripts/browser_qa.py": "771b6c611da8b2188d3af0de014160fec07eee94b9c022b70da60dd43e957491",
+    "scripts/check_site.py": "068f4b7f70d85ef60bb0ac6fabd18e25a9da6aba2b862db0395926e2afeb2d15"
+  },
+  "failure": {
+    "type": "Error",
+    "message": "BrowserType.launch: \n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Host system is missing dependencies to run browsers. \u2551\n\u2551 Missing libraries:                                   \u2551\n\u2551     libgtk-4.so.1                                    \u2551\n\u2551     libgraphene-1.0.so.0                             \u2551\n\u2551     libharfbuzz-icu.so.0                             \u2551\n\u2551     libmanette-0.2.so.0                              \u2551\n\u2551     libhyphen.so.0                                   \u2551\n\u2551     libGLESv2.so.2                                   \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+  },
+  "finished_at_utc": "2026-10-17T12:42:09.255178+00:00"
+}

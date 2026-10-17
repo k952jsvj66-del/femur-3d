@@ -62,6 +62,8 @@ Si Chromium est déjà installé, le script le détecte ; sinon il utilise celui
 
 Résultats et limites : [contrôle qualité](docs/QUALITY.md). Configuration et publication : [déploiement](docs/DEPLOYMENT.md).
 
+Si l’intégration GitHub reste bloquée, `pass-lyon-sud-complet.patch` permet de récupérer tous les changements avec `git am` dans un clone neuf. La [procédure de récupération et de création de PR](docs/DEPLOYMENT.md) conserve une branche de sauvegarde, vérifie l’identité de l’Ostéoscope et ne modifie jamais directement `main`. Le bundle et le ZIP des sources offrent deux autres méthodes de récupération.
+
 ## Ajouter du contenu
 
 Dupliquer la structure d’une page et réutiliser `assets/styles.css`. Les pages restent des documents HTML ordinaires, avec navigation et contenu présents dès le chargement. Mettre à jour les menus et l’accueil quand une nouvelle rubrique devient disponible.

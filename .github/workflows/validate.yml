@@ -26,8 +26,8 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          source = Path('histologie/osteoscope/application.html').read_text()
+          source = Path('histologie/osteoscope/application.html').read_text(encoding='utf-8')
           script = source.split('<script>', 1)[1].rsplit('</script>', 1)[0]
-          Path('/tmp/osteoscope-check.js').write_text(script)
+          Path('/tmp/osteoscope-check.js').write_text(script, encoding='utf-8')
           PY
           node --check /tmp/osteoscope-check.js

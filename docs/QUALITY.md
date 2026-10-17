@@ -18,6 +18,7 @@ Commandes exécutées : `python scripts/check_site.py`, `node --check` sur le sc
 | JavaScript original | Vérification de syntaxe Node réussie. |
 | Pages principales | 35 vues : 5 pages × 7 formats, de 320 × 800 à 1366 × 900. |
 | Navigation | Quatre cartes et retours à l’accueil testés avec JavaScript désactivé. |
+| Clavier | Lien d’accès direct au contenu accessible au premier Tab, visible au focus et activable avec Entrée. |
 | Lisibilité tactile | Liens de navigation, accès directs et cartes d’au moins 44 px de hauteur ; aucune page principale ne déborde horizontalement. |
 | Ressources | Images chargées ; aucune requête vers l’application 3D tant que son module n’est pas ouvert. |
 | Intégration Ostéoscope | Navigation accueil → histologie → application → affichage agrandi → retour testée. |
@@ -28,11 +29,19 @@ Commandes exécutées : `python scripts/check_site.py`, `node --check` sur le sc
 
 Les 25 comparaisons couvrent l’état initial, les trois plans de coupe et l’inversion de la moitié conservée, la position de coupe, la transparence, une modification de couche, les sept tissus, les onze types cellulaires et la matrice. Le parcours vérifie aussi les étiquettes, le zoom automatique, les fenêtres d’aide et de sources, le zoom manuel et la rotation à la souris dans l’iframe.
 
-Le rapport machine est conservé dans [qa-results.json](qa-results.json), et le résultat des vérifications externes dans [external-links.json](external-links.json).
+Le rapport machine est conservé dans [qa-results.json](qa-results.json), la tentative WebKit dans [qa-webkit-results.json](qa-webkit-results.json), et le résultat des vérifications externes dans [external-links.json](external-links.json).
+
+Le rapport navigateur indique désormais son état (`passed`, `failed`, `interrupted`), l’heure de début et de fin, la version du navigateur et les empreintes de ses fichiers d’entrée. Un lancement raté remplace le rapport précédent par un échec explicite au lieu de laisser un ancien succès. Les lecteurs et écrivains Python utilisent explicitement UTF-8, y compris pour les documents en français sur une machine dont l’encodage par défaut serait différent.
 
 Environnement de référence : Chromium installé dans le conteneur, Playwright 1.62.0, rendu WebGL logiciel SwiftShader, DPR 1. Les comparaisons de pixels portent sur les deux documents dans ce même environnement, pas sur une promesse de pixels identiques entre GPU ou navigateurs.
 
 La plateforme statique complète, hors application, représente moins de 50 Ko pour ses pages, styles et illustrations. Elle ne charge ni police distante ni bibliothèque JavaScript. Le fichier 3D de 3,16 Mo est chargé à la demande.
+
+## Récupération de la livraison
+
+Un patch unique `pass-lyon-sud-complet.patch`, au format `git format-patch --stdout --binary`, contient l’ensemble des commits depuis la version initiale. Il conserve le renommage identique à 100 % de l’Ostéoscope. La procédure de livraison applique ce patch avec `git am` dans un clone distinct à partir du commit initial, compare l’arbre Git obtenu avec celui de la branche de travail, puis relance les contrôles statiques sur cette copie récupérée. Le résultat de cette vérification est joint dans l’archive de livraison.
+
+Le bundle contient l’historique et la branche de sauvegarde, tandis que le ZIP permet une inspection sans Git. Les trois formats restent des livrables à récupérer ; ils ne constituent pas une publication sur GitHub. Les commandes de récupération, de vérification, d’envoi des branches et de création d’une PR brouillon figurent dans [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Sources et publication
 

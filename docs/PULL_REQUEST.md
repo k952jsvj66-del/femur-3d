@@ -22,6 +22,8 @@ Référence : commit `696c28c2386d58a0341391888e2c1ad2664b3300`, aussi identique
 - Vingt-cinq scénarios originaux/intégrés : états et pixels WebGL identiques. Coupes, transparence, couches, sept tissus, onze types cellulaires et matrice couverts ; aide, sources, zoom et retour également vérifiés.
 - Aucune erreur JavaScript ou HTTP dans le parcours automatisé.
 - Rotation à un doigt et pincement à deux doigts émulés sous Chromium : effet de caméra vérifié.
+- Accès au contenu au clavier ; rapports datés avec empreintes des fichiers et état explicite de réussite ou d’échec.
+- Livraison récupérable par patch complet, bundle ou ZIP ; procédure `git am` vérifiée dans un clone indépendant avec comparaison de l’arbre Git.
 - GitHub Pages existant : déploiement initial `built` sur `main` / `/`. Aucun changement de source Pages et aucun déploiement de cette branche.
 
 ## À examiner avant fusion
