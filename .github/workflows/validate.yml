@@ -1,0 +1,33 @@
+name: Validate PASS Lyon Sud
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: ["feat/pass-lyon-sud-platform"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify preservation, routes and local resources
+        run: python scripts/check_site.py
+      - name: Check original JavaScript syntax without changing the application
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          source = Path('histologie/osteoscope/application.html').read_text(encoding='utf-8')
+          script = source.split('<script>', 1)[1].rsplit('</script>', 1)[0]
+          Path('/tmp/osteoscope-check.js').write_text(script, encoding='utf-8')
+          PY
+          node --check /tmp/osteoscope-check.js

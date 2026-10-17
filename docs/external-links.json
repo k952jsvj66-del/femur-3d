@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://bibnum.univ-lyon1.fr/nuxeo/nxfile/default/4c999402-0fce-4abd-888e-d0701b47aa91/file%3Acontent/Annales_PASS_Lyon_Sud_2024-2025%20sessions%201%20et%202.pdf",
+    "status": 200,
+    "final_url": "https://bibnum.univ-lyon1.fr/nuxeo/nxfile/default/4c999402-0fce-4abd-888e-d0701b47aa91/file%3Acontent/Annales_PASS_Lyon_Sud_2024-2025%20sessions%201%20et%202.pdf",
+    "content_type": "application/pdf"
+  },
+  {
+    "url": "https://lyon-sud.univ-lyon1.fr/formation/medecine/pass-las",
+    "status": 200,
+    "final_url": "https://lyon-sud.univ-lyon1.fr/formation/medecine/pass-las",
+    "content_type": "text/html;charset=UTF-8"
+  },
+  {
+    "url": "https://moodle.univ-lyon1.fr/",
+    "status": 200,
+    "final_url": "https://moodle.univ-lyon1.fr/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://portaildoc.univ-lyon1.fr/les-collections/explorer-par-themes/paces-pass-l-as",
+    "status": 200,
+    "final_url": "https://portaildoc.univ-lyon1.fr/les-collections/explorer-par-themes/paces-pass-l-as",
+    "content_type": "text/html;charset=UTF-8"
+  },
+  {
+    "url": "https://tutoratlyonsud.univ-lyon1.fr/nos-services-2022/",
+    "status": 200,
+    "final_url": "https://tutoratlyonsud.univ-lyon1.fr/nos-services-2022/",
+    "content_type": "text/html; charset=UTF-8"
+  }
+]
