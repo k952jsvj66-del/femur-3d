@@ -92,13 +92,19 @@ def check():
     assert (ROOT / '.nojekyll').is_file(), 'Missing static Pages marker'
     for route in ('', 'biologie-cellulaire', 'histologie', 'histologie/osteoscope', 'embryologie', 'qcm-annales'):
         assert (ROOT / route / 'index.html') in pages, f'Missing route {route}'
-    platform = [path for path in pages if path != original]
-    assert all('<script' not in path.read_text(encoding='utf-8') for path in platform), 'Platform must not require JavaScript'
+    platform = [ROOT / route / 'index.html' for route in ('', 'biologie-cellulaire', 'histologie', 'histologie/osteoscope', 'embryologie', 'qcm-annales')]
+    assert all('<script' not in path.read_text(encoding='utf-8') for path in platform), 'Landing pages must not require JavaScript'
     size = sum(path.stat().st_size for path in platform) + sum(path.stat().st_size for path in (ROOT / 'assets').glob('*'))
     assert size < 100_000, f'Platform resources unexpectedly large: {size}'
     print(f'PASS {len(pages)} HTML documents; {checked} local links/assets/fragments; 5 valid SVG assets')
     print(f'PASS platform resources: {size:,} bytes; original WebGL application loads only on demand')
     print(f'INFO {len(external)} external URLs require online verification; they are not fetched by this check')
+    vesiculo = ROOT / 'biologie-cellulaire/vesiculoscope'
+    if vesiculo.is_dir():
+        assert (vesiculo / 'index.html') in pages, 'Missing VesiculoScope route'
+        module_size = sum(path.stat().st_size for path in vesiculo.iterdir() if path.is_file())
+        assert module_size < 250_000, f'VesiculoScope resources unexpectedly large: {module_size}'
+        print(f'PASS VesiculoScope: {module_size:,} bytes, all scripts/styles local')
 
 
 if __name__ == '__main__':

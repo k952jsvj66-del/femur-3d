@@ -1,0 +1,25 @@
+{
+  "document": "Fiche_synthese_CM5.pdf",
+  "description": "Fiche fournie, portant la mention D’après le cours du Pr Buffoni — Lyon Sud",
+  "pages": 8,
+  "sha256": "e85442656219fca00014d07a31cc7dbaaaccdb3eda166e5ce0c77763f00bad14",
+  "verified_at_utc": "2026-10-17T15:33:22.370804+00:00",
+  "source_provided_by_user": true,
+  "read_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "figures_visually_checked": [
+    2,
+    5
+  ],
+  "raw_document_redistributed": false,
+  "source_page_convention": "Printed page number equals PDF page number, 1-based",
+  "platform_base_commit": "327cd3e53aa26ddf0250b90bac0606c5742d8c9c"
+}
