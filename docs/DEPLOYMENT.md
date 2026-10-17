@@ -28,8 +28,8 @@ La référence de départ attendue est exactement `696c28c2386d58a0341391888e2c1
 Créer ensuite une sauvegarde de l’état initial et une branche de travail, puis appliquer le patch :
 
 ```sh
-git branch backup/osteoscope-2026-10-17 origin/main
-git switch -c feat/pass-lyon-sud-platform origin/main
+git branch --no-track backup/osteoscope-2026-10-17 origin/main
+git switch --no-track -c feat/pass-lyon-sud-platform origin/main
 git am ../pass-lyon-sud-complet.patch
 python scripts/check_site.py
 git diff --exit-code backup/osteoscope-2026-10-17:index.html HEAD:histologie/osteoscope/application.html
