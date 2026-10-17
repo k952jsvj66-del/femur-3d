@@ -1,0 +1,96 @@
+{
+  "browser": "chromium",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 900,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 1194,
+      "height": 834,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 834,
+      "height": 1194,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "pages": 5,
+      "overflow": false,
+      "touch_targets_min": 44
+    }
+  ],
+  "routes": [
+    "",
+    "biologie-cellulaire/",
+    "histologie/",
+    "embryologie/",
+    "qcm-annales/"
+  ],
+  "project_base": "/femur-3d/",
+  "navigation_without_javascript": true,
+  "osteoscope_equivalent_scenarios": [
+    "initial",
+    "trans",
+    "sag",
+    "cor",
+    "transparency",
+    "layer",
+    "tissue_cortex",
+    "tissue_trabecular",
+    "tissue_periosteum",
+    "tissue_endosteum",
+    "tissue_cartilage",
+    "tissue_redmarrow",
+    "tissue_yellowmarrow",
+    "cell_osteocyte",
+    "cell_osteoblast",
+    "cell_osteoclast",
+    "cell_lining",
+    "cell_progenitor",
+    "cell_fibroblast",
+    "cell_adipocyte",
+    "cell_megakaryocyte",
+    "cell_hematopoietic",
+    "cell_endothelial",
+    "cell_chondrocyte",
+    "matrix"
+  ],
+  "canvas_pixel_hashes_match": true,
+  "emulated_touch_rotation_and_pinch": true,
+  "navigation_to_and_from_osteoscope": true,
+  "osteoscope_tablet_and_phone_layouts": 4,
+  "page_errors": [],
+  "http_errors": []
+}
