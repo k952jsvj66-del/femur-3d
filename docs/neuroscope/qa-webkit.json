@@ -1,0 +1,170 @@
+{
+  "engine": "Playwright WebKit",
+  "status": "passed",
+  "hardware_ipad_test": "not_run",
+  "started_at_utc": "2026-10-17T21:28:36.995565+00:00",
+  "script_sha256": "674a630662f91482954b8516ec128856c5cd3c0e1e271fbc47d533bf3345bd9d",
+  "url": "http://127.0.0.1:36819/femur-3d/histologie/neuroscope/",
+  "viewports": [
+    {
+      "width": 1024,
+      "height": 768,
+      "http_status": 200,
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+      "checks": [
+        "touch_zoom_button",
+        "meningeal_explosion",
+        "csf_real_play_pause",
+        "microglia_activation",
+        "five_distinct_rendered_canvas_images",
+        "qrm_five_options_and_five_explanations",
+        "source_dialog_and_local_sha256_pdf_binding"
+      ],
+      "models": [
+        {
+          "view": "body",
+          "meshes": 334,
+          "rendered": "body",
+          "frames": 4
+        },
+        {
+          "view": "meninges",
+          "meshes": 86,
+          "rendered": "meninges",
+          "frames": 8
+        },
+        {
+          "view": "csf",
+          "meshes": 52,
+          "rendered": "csf",
+          "frames": 19
+        },
+        {
+          "view": "microglia",
+          "meshes": 45,
+          "rendered": "microglia",
+          "frames": 23
+        },
+        {
+          "view": "neuron",
+          "meshes": 58,
+          "rendered": "neuron",
+          "frames": 26
+        }
+      ],
+      "served_sha256": {
+        "index.html": "c33697e2972b71ed2d0135f588b7289a6a1298df80d7d412c34afeb4d6f682c9",
+        "app.js": "1e65e5f3b0f8f8b71bbd587f39bcb0456c82cc06f64f3a7a92bc7f79dbb61c7c",
+        "scene.js": "aaf9c5faab3882eb29237ebaa4e6e2c438707009ade6010529bb4617f3d899db",
+        "anatomy-data.js": "d1829b5a724bae4033e691fd96540ed51404007c7da42368eea1b453d4afbf97",
+        "content.js": "7c2c457586e9c93bfad95385fb5b3495dd1f2e193d4b3ba32d77d7593090118d",
+        "models-anatomy.js": "cbaf61b5e1bbd7465e07d42f214c9be2f32d55472786e3f8892a25b1639071a4",
+        "models-micro.js": "cd98efd59b7e579c90a25c49b1c58ba76be3fdfa179211ff8198c3b00eea3337",
+        "styles.css": "6ae7b9925605b07688059288fd3d0722e4c50b697fb19fbe4b48bf2b2f121fc9"
+      },
+      "canvas_sha256": {
+        "body": "8468a973652caa47a8e4e95c825f063544ebc152e3414f12ba275012510f7e39",
+        "meninges": "97c03eb590bb51d3bdb7c24f1310c9ec64ccddae9311cfc4ba6b3d74f4e41bd8",
+        "csf": "4994e5b9eb996d46c6c715586beb9920a4ae67fa19b97f71ccaaa623b6da1841",
+        "microglia": "df95bc2b0f213f1ffebd07eda98d5ef03be280326373370b1f3fdd896c14c159",
+        "neuron": "c8941123cdd8f9d4af1dde6cf329b08f28990f99531eebd75b7c5eb5b458a8d4"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1194,
+      "http_status": 200,
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+      "checks": [
+        "touch_zoom_button",
+        "meningeal_explosion",
+        "csf_real_play_pause",
+        "microglia_activation",
+        "five_distinct_rendered_canvas_images",
+        "qrm_five_options_and_five_explanations",
+        "source_dialog_and_local_sha256_pdf_binding"
+      ],
+      "models": [
+        {
+          "view": "body",
+          "meshes": 334,
+          "rendered": "body",
+          "frames": 4
+        },
+        {
+          "view": "meninges",
+          "meshes": 86,
+          "rendered": "meninges",
+          "frames": 8
+        },
+        {
+          "view": "csf",
+          "meshes": 52,
+          "rendered": "csf",
+          "frames": 20
+        },
+        {
+          "view": "microglia",
+          "meshes": 45,
+          "rendered": "microglia",
+          "frames": 24
+        },
+        {
+          "view": "neuron",
+          "meshes": 58,
+          "rendered": "neuron",
+          "frames": 27
+        }
+      ],
+      "served_sha256": {
+        "index.html": "c33697e2972b71ed2d0135f588b7289a6a1298df80d7d412c34afeb4d6f682c9",
+        "app.js": "1e65e5f3b0f8f8b71bbd587f39bcb0456c82cc06f64f3a7a92bc7f79dbb61c7c",
+        "scene.js": "aaf9c5faab3882eb29237ebaa4e6e2c438707009ade6010529bb4617f3d899db",
+        "anatomy-data.js": "d1829b5a724bae4033e691fd96540ed51404007c7da42368eea1b453d4afbf97",
+        "content.js": "7c2c457586e9c93bfad95385fb5b3495dd1f2e193d4b3ba32d77d7593090118d",
+        "models-anatomy.js": "cbaf61b5e1bbd7465e07d42f214c9be2f32d55472786e3f8892a25b1639071a4",
+        "models-micro.js": "cd98efd59b7e579c90a25c49b1c58ba76be3fdfa179211ff8198c3b00eea3337",
+        "styles.css": "6ae7b9925605b07688059288fd3d0722e4c50b697fb19fbe4b48bf2b2f121fc9"
+      },
+      "canvas_sha256": {
+        "body": "2fb79024fe73214e1c62f40aae15bdc69a6a997736b895cc4819ff705451c861",
+        "meninges": "182a78c827ccb3949df2506e6bddf88455cd1b3699a12c8f2507bc3b7ca07c82",
+        "csf": "29a4151941aaa97317aba464f7ee3e12f5ff4f9abed638ea58120c4f747362b0",
+        "microglia": "ae48375c6106445cd69697fa7dcbf00f5051b8530e2599f2a9ba8edaf2f64372",
+        "neuron": "53ce4af8d92a393423fc22d9f2827cca9831ee91d529f6d6c8df265870db74b1"
+      }
+    }
+  ],
+  "errors": [],
+  "console_errors": [],
+  "bad_requests": [],
+  "post_requests": [],
+  "input_sha256_before": {
+    "histologie/neuroscope/anatomy-data.js": "d1829b5a724bae4033e691fd96540ed51404007c7da42368eea1b453d4afbf97",
+    "histologie/neuroscope/app.js": "1e65e5f3b0f8f8b71bbd587f39bcb0456c82cc06f64f3a7a92bc7f79dbb61c7c",
+    "histologie/neuroscope/assets/vendor/OrbitControls.js": "1a26c7e8e7ac703a81f1938902eebf45c0ceecf4c6012dda11f90582064e8a4e",
+    "histologie/neuroscope/assets/vendor/THREE-LICENSE.txt": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+    "histologie/neuroscope/assets/vendor/three.module.js": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+    "histologie/neuroscope/content.js": "7c2c457586e9c93bfad95385fb5b3495dd1f2e193d4b3ba32d77d7593090118d",
+    "histologie/neuroscope/index.html": "c33697e2972b71ed2d0135f588b7289a6a1298df80d7d412c34afeb4d6f682c9",
+    "histologie/neuroscope/models-anatomy.js": "cbaf61b5e1bbd7465e07d42f214c9be2f32d55472786e3f8892a25b1639071a4",
+    "histologie/neuroscope/models-micro.js": "cd98efd59b7e579c90a25c49b1c58ba76be3fdfa179211ff8198c3b00eea3337",
+    "histologie/neuroscope/scene.js": "aaf9c5faab3882eb29237ebaa4e6e2c438707009ade6010529bb4617f3d899db",
+    "histologie/neuroscope/styles.css": "6ae7b9925605b07688059288fd3d0722e4c50b697fb19fbe4b48bf2b2f121fc9"
+  },
+  "browser_version": "26.5",
+  "input_sha256_after": {
+    "histologie/neuroscope/anatomy-data.js": "d1829b5a724bae4033e691fd96540ed51404007c7da42368eea1b453d4afbf97",
+    "histologie/neuroscope/app.js": "1e65e5f3b0f8f8b71bbd587f39bcb0456c82cc06f64f3a7a92bc7f79dbb61c7c",
+    "histologie/neuroscope/assets/vendor/OrbitControls.js": "1a26c7e8e7ac703a81f1938902eebf45c0ceecf4c6012dda11f90582064e8a4e",
+    "histologie/neuroscope/assets/vendor/THREE-LICENSE.txt": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+    "histologie/neuroscope/assets/vendor/three.module.js": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+    "histologie/neuroscope/content.js": "7c2c457586e9c93bfad95385fb5b3495dd1f2e193d4b3ba32d77d7593090118d",
+    "histologie/neuroscope/index.html": "c33697e2972b71ed2d0135f588b7289a6a1298df80d7d412c34afeb4d6f682c9",
+    "histologie/neuroscope/models-anatomy.js": "cbaf61b5e1bbd7465e07d42f214c9be2f32d55472786e3f8892a25b1639071a4",
+    "histologie/neuroscope/models-micro.js": "cd98efd59b7e579c90a25c49b1c58ba76be3fdfa179211ff8198c3b00eea3337",
+    "histologie/neuroscope/scene.js": "aaf9c5faab3882eb29237ebaa4e6e2c438707009ade6010529bb4617f3d899db",
+    "histologie/neuroscope/styles.css": "6ae7b9925605b07688059288fd3d0722e4c50b697fb19fbe4b48bf2b2f121fc9"
+  },
+  "finished_at_utc": "2026-10-17T21:29:06.121240+00:00"
+}

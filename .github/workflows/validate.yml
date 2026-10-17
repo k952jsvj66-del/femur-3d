@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: ["feat/pass-lyon-sud-platform", "feat/vesiculoscope-phase-1"]
+    branches: ["feat/pass-lyon-sud-platform", "feat/vesiculoscope-phase-1", "feat/neuroscope-3d"]
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -37,6 +40,8 @@ jobs:
           node --check biologie-cellulaire/vesiculoscope/scene.js
           node --check biologie-cellulaire/vesiculoscope/app.js
           node scripts/check_vesiculoscope.cjs
+      - name: Validate NeuroScope sources and procedural geometry
+        run: node scripts/check_neuroscope.mjs
 
   vesiculoscope-browser:
     runs-on: ubuntu-latest
@@ -58,3 +63,31 @@ jobs:
         with:
           name: vesiculoscope-browser-results
           path: test-results/vesiculoscope
+
+  neuroscope-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install browser test tools
+        run: |
+          python -m pip install playwright==1.62.0
+          python -m playwright install --with-deps chromium webkit
+      - name: Exercise NeuroScope at the Pages project path
+        run: python scripts/neuroscope_qa.py --output-dir test-results/neuroscope
+      - name: Check NeuroScope with WebKit
+        run: python scripts/neuroscope_webkit_qa.py --output test-results/neuroscope-webkit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: neuroscope-browser-results
+          path: |
+            test-results/neuroscope
+            test-results/neuroscope-webkit

@@ -87,7 +87,8 @@ def check():
                 assert unquote(url.fragment) in pages[target].ids, f'{name}: missing fragment {link}'
             checked += 1
 
-    for svg in (ROOT / 'assets').glob('*.svg'):
+    svgs = list((ROOT / 'assets').glob('*.svg'))
+    for svg in svgs:
         ET.parse(svg)
     assert (ROOT / '.nojekyll').is_file(), 'Missing static Pages marker'
     for route in ('', 'biologie-cellulaire', 'histologie', 'histologie/osteoscope', 'embryologie', 'qcm-annales'):
@@ -96,7 +97,7 @@ def check():
     assert all('<script' not in path.read_text(encoding='utf-8') for path in platform), 'Landing pages must not require JavaScript'
     size = sum(path.stat().st_size for path in platform) + sum(path.stat().st_size for path in (ROOT / 'assets').glob('*'))
     assert size < 100_000, f'Platform resources unexpectedly large: {size}'
-    print(f'PASS {len(pages)} HTML documents; {checked} local links/assets/fragments; 5 valid SVG assets')
+    print(f'PASS {len(pages)} HTML documents; {checked} local links/assets/fragments; {len(svgs)} valid SVG assets')
     print(f'PASS platform resources: {size:,} bytes; original WebGL application loads only on demand')
     print(f'INFO {len(external)} external URLs require online verification; they are not fetched by this check')
     vesiculo = ROOT / 'biologie-cellulaire/vesiculoscope'
