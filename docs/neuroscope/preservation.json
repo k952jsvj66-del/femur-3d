@@ -1,0 +1,12 @@
+{
+  "base_commit": "707f33f957997eeeccd97d903babd1ecb0debd10",
+  "protected_files": {
+    "histologie/osteoscope/application.html": "2510d3635bf72a727715c5e8a1d338761622f63cf858bb3aa211c1b16b17d31c",
+    "histologie/osteoscope/index.html": "4fe1ef7017868677393e9033eef9d6719c29e41f0014b4e7e0bb9745175182e0",
+    "biologie-cellulaire/vesiculoscope/scene.js": "a72018cce1225ba5ecfa014fb59f7be5cbbbf72196867b758d4167ba9dcad546",
+    "biologie-cellulaire/vesiculoscope/index.html": "4567d8b06bdd75ffd44e0647f4bf2cfa5a7d2c02c894d7fcdf7a3d9ba1a3c973",
+    "biologie-cellulaire/vesiculoscope/styles.css": "d54cab1c341202c96c5aca9152321803f2f8893ab79a545907cc335e206ce4da",
+    "biologie-cellulaire/vesiculoscope/content.js": "8e94a984e3bc71016b9a731940606b87120cb190d3345ba882673dc89e5f8c2b",
+    "biologie-cellulaire/vesiculoscope/app.js": "e13eb1501ae6c0f803bd1a163bc90b04734b0cd6797c475c4e032aa051837fba"
+  }
+}

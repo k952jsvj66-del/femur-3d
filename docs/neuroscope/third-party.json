@@ -1,0 +1,29 @@
+{
+  "package": "three",
+  "version": "0.160.1",
+  "license": "MIT",
+  "retrieved_at": "2026-10-17",
+  "files": [
+    {
+      "path": "histologie/neuroscope/assets/vendor/three.module.js",
+      "source_url": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.min.js",
+      "bytes": 670681,
+      "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+      "change": "aucun"
+    },
+    {
+      "path": "histologie/neuroscope/assets/vendor/OrbitControls.js",
+      "source_url": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/controls/OrbitControls.js",
+      "bytes": 30985,
+      "sha256": "1a26c7e8e7ac703a81f1938902eebf45c0ceecf4c6012dda11f90582064e8a4e",
+      "change": "import de three remplacé par ./three.module.js"
+    },
+    {
+      "path": "histologie/neuroscope/assets/vendor/THREE-LICENSE.txt",
+      "source_url": "https://cdn.jsdelivr.net/npm/three@0.160.1/LICENSE",
+      "bytes": 1081,
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "change": "aucun"
+    }
+  ]
+}

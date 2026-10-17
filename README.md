@@ -1,6 +1,6 @@
 # PASS Lyon Sud
 
-Plateforme interactive de révision, statique et compatible avec GitHub Pages : un accueil, quatre rubriques, l’Ostéoscope complet et la phase 1 du VésiculoScope. Les vues moléculaires avancées, l’autophagie et le moteur QCM restent en préparation.
+Plateforme interactive de révision, statique et compatible avec GitHub Pages : un accueil, quatre rubriques, l’Ostéoscope complet, la phase 1 du VésiculoScope et le NeuroScope 3D. Les vues avancées du trafic vésiculaire, l’autophagie et la banque générale d’annales restent en préparation ; le NeuroScope propose ses propres QRM originaux.
 
 Projet personnel indépendant de l’Université Claude Bernard Lyon 1 et du Tutorat Santé Lyon Sud.
 
@@ -14,6 +14,7 @@ biologie-cellulaire/vesiculoscope/  Cellule 2,5D, quatre cargaisons et fiches CM
 histologie/index.html               Catalogue des modules histologiques
 histologie/osteoscope/index.html    Navigation + application dans son propre document
 histologie/osteoscope/application.html  Ostéoscope d’origine, strictement inchangé
+histologie/neuroscope/              Explorateur WebGL du système nerveux et QRM TN1
 embryologie/index.html              Présentation — module en préparation
 qcm-annales/index.html              UE2, UE5 et sources ; entraînement en préparation
 docs/                              Préservation, sources, extension et contrôle qualité
@@ -40,7 +41,7 @@ Depuis le dépôt :
 python -m http.server 8000 --bind 127.0.0.1 --directory .
 ```
 
-Ouvrir `http://127.0.0.1:8000/`. Aucun paquet JavaScript, compilation, serveur applicatif ou compte utilisateur n’est nécessaire. Les pages principales fonctionnent sans JavaScript ; les deux modules interactifs chargent leurs scripts seulement à leur ouverture. Les chemins relatifs fonctionnent aussi sous `/femur-3d/` sur GitHub Pages.
+Ouvrir `http://127.0.0.1:8000/`. Aucun paquet JavaScript à installer, compilation, serveur applicatif ou compte utilisateur n’est nécessaire. Les pages principales fonctionnent sans JavaScript ; les trois modules interactifs chargent leurs scripts seulement à leur ouverture. Les chemins relatifs fonctionnent aussi sous `/femur-3d/` sur GitHub Pages.
 
 Le VésiculoScope est accessible à `http://127.0.0.1:8000/biologie-cellulaire/vesiculoscope/`. Il suit quatre cargaisons à travers 55 étapes référencées dans la fiche CM5 fournie, avec précisions externes séparées. Le PDF peut être associé localement pour ouvrir les pages citées ; il n’est pas redistribué avec le site. Voir [architecture et périmètre](docs/vesiculoscope/ARCHITECTURE.md) et [sources et décisions scientifiques](docs/vesiculoscope/SOURCES.md).
 
@@ -77,4 +78,18 @@ Cette procédure et ce patch concernent la livraison initiale de la plateforme. 
 
 Dupliquer la structure d’une page et réutiliser `assets/styles.css`. Les pages restent des documents HTML ordinaires, avec navigation et contenu présents dès le chargement. Mettre à jour les menus et l’accueil quand une nouvelle rubrique devient disponible.
 
-Avant d’ajouter des QCM ou des documents, consulter [le modèle de contenu futur](docs/CONTENT_MODEL.md) et [les sources vérifiées](docs/SOURCES.md). Aucune question, annale, correction ou donnée de progression n’est intégrée dans cette version. Aucun document utilisateur n’est collecté.
+Avant d’ajouter des QCM ou des documents, consulter [le modèle de contenu futur](docs/CONTENT_MODEL.md) et [les sources vérifiées](docs/SOURCES.md). La rubrique générale QCM/annales reste en préparation ; les entraînements originaux propres au NeuroScope sont explicitement identifiés. Aucun document utilisateur n’est collecté.
+
+## NeuroScope 3D
+
+Le module [Histologie / NeuroScope](histologie/neuroscope/) propose une exploration WebGL du corps, des structures nerveuses, des enveloppes et des cellules, avec modèles procéduraux originaux chargés à la demande. Les coupes sont géométriques et les dimensions schématiques. Les fiches distinguent la ronéo TN1 fournie, ses pages PDF et sa numérotation imprimée, des compléments scientifiques.
+
+La ronéo et ses illustrations ne sont pas redistribuées. L’utilisateur peut associer localement son exemplaire vérifié par SHA-256. Les QRM sont originaux ; les annales 2020 reproduites dans le document ne sont pas recopiées. Les ambiguïtés scientifiques sont explicitées dans [l’audit](docs/neuroscope/SCIENTIFIC_AUDIT.md).
+
+```bash
+node scripts/check_neuroscope.mjs
+python scripts/neuroscope_qa.py --output-dir test-results/neuroscope
+python scripts/neuroscope_webkit_qa.py --output test-results/neuroscope-webkit
+```
+
+L’option `--pdf /chemin/vers/TN1___Ron_o_2026.pdf` teste l’association locale du document. Architecture, résultats et récupération : [documentation NeuroScope](docs/neuroscope/ARCHITECTURE.md), [contrôle qualité](docs/neuroscope/QUALITY.md), [livraison](docs/neuroscope/DELIVERY.md). Le développement se fait sur une branche distincte ; les vérifications ne déploient pas le site.

@@ -216,7 +216,7 @@ def main():
             # Compare identical source running directly vs through the new wrapper.
             page.set_viewport_size({'width': 1194, 'height': 834})
             page.goto(base + 'histologie/')
-            page.locator('.button').tap()
+            page.locator('a[href="./osteoscope/"]').tap()
             page.wait_for_url(base + 'histologie/osteoscope/')
             frame = page.frames[1]
             wait_for_application(frame)

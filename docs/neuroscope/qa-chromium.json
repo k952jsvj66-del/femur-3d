@@ -1,0 +1,730 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-17T21:26:20.876743+00:00",
+  "engine": "Chromium / SwiftShader",
+  "safari_or_real_ipad_tested": false,
+  "project_base": "/femur-3d/",
+  "checks": {
+    "progressive_loading_and_reduced_motion": true,
+    "views": [
+      {
+        "id": "body",
+        "model": "body",
+        "meshes": 334,
+        "geometries": 334,
+        "labels": 8
+      },
+      {
+        "id": "head",
+        "model": "head",
+        "meshes": 334,
+        "geometries": 250,
+        "labels": 15
+      },
+      {
+        "id": "spine",
+        "model": "spine",
+        "meshes": 334,
+        "geometries": 309,
+        "labels": 15
+      },
+      {
+        "id": "upper-limb",
+        "model": "upper-limb",
+        "meshes": 334,
+        "geometries": 299,
+        "labels": 15
+      },
+      {
+        "id": "lower-limb",
+        "model": "lower-limb",
+        "meshes": 334,
+        "geometries": 242,
+        "labels": 15
+      },
+      {
+        "id": "digestive",
+        "model": "digestive",
+        "meshes": 334,
+        "geometries": 282,
+        "labels": 15
+      },
+      {
+        "id": "brain",
+        "model": "brain",
+        "meshes": 61,
+        "geometries": 61,
+        "labels": 6
+      },
+      {
+        "id": "cerebellum",
+        "model": "cerebellum",
+        "meshes": 61,
+        "geometries": 57,
+        "labels": 6
+      },
+      {
+        "id": "brainstem",
+        "model": "brainstem",
+        "meshes": 61,
+        "geometries": 57,
+        "labels": 6
+      },
+      {
+        "id": "spinal-cord",
+        "model": "spinal-cord",
+        "meshes": 50,
+        "geometries": 50,
+        "labels": 8
+      },
+      {
+        "id": "dorsal-root",
+        "model": "dorsal-root",
+        "meshes": 50,
+        "geometries": 50,
+        "labels": 8
+      },
+      {
+        "id": "spinal-meninges",
+        "model": "spinal-meninges",
+        "meshes": 71,
+        "geometries": 71,
+        "labels": 10
+      },
+      {
+        "id": "ventral-root",
+        "model": "ventral-root",
+        "meshes": 50,
+        "geometries": 50,
+        "labels": 8
+      },
+      {
+        "id": "cortex",
+        "model": "cortex",
+        "meshes": 61,
+        "geometries": 61,
+        "labels": 6
+      },
+      {
+        "id": "gray-matter",
+        "model": "gray-matter",
+        "meshes": 71,
+        "geometries": 71,
+        "labels": 4
+      },
+      {
+        "id": "white-matter",
+        "model": "white-matter",
+        "meshes": 101,
+        "geometries": 101,
+        "labels": 7
+      },
+      {
+        "id": "corpus-callosum",
+        "model": "corpus-callosum",
+        "meshes": 61,
+        "geometries": 61,
+        "labels": 6
+      },
+      {
+        "id": "basal-nuclei",
+        "model": "basal-nuclei",
+        "meshes": 61,
+        "geometries": 61,
+        "labels": 6
+      },
+      {
+        "id": "meninges",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "scalp",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "skull",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "periosteum",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "dura",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "dural-sinus",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "falx",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "tentorium",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "arachnoid",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "subarachnoid",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "pia",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "glia-limitans",
+        "model": "meninges",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 13
+      },
+      {
+        "id": "csf",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "lateral-ventricles",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "monro",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "third-ventricle",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "aqueduct",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "fourth-ventricle",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "median-aperture",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "lateral-apertures",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "cisterns",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "perimedullary",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "central-canal",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "choroid-plexus",
+        "model": "blood-csf",
+        "meshes": 196,
+        "geometries": 196,
+        "labels": 3
+      },
+      {
+        "id": "granulations",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "lymphatics",
+        "model": "csf",
+        "meshes": 52,
+        "geometries": 53,
+        "labels": 15
+      },
+      {
+        "id": "interfaces",
+        "model": "interfaces",
+        "meshes": 222,
+        "geometries": 222,
+        "labels": 5
+      },
+      {
+        "id": "bbb",
+        "model": "bbb",
+        "meshes": 26,
+        "geometries": 26,
+        "labels": 2
+      },
+      {
+        "id": "blood-csf",
+        "model": "blood-csf",
+        "meshes": 196,
+        "geometries": 196,
+        "labels": 3
+      },
+      {
+        "id": "ependyma",
+        "model": "ependyma",
+        "meshes": 182,
+        "geometries": 182,
+        "labels": 3
+      },
+      {
+        "id": "neuron",
+        "model": "neuron",
+        "meshes": 58,
+        "geometries": 58,
+        "labels": 6
+      },
+      {
+        "id": "astrocyte",
+        "model": "astrocyte",
+        "meshes": 36,
+        "geometries": 36,
+        "labels": 3
+      },
+      {
+        "id": "oligodendrocyte",
+        "model": "oligodendrocyte",
+        "meshes": 12,
+        "geometries": 12,
+        "labels": 3
+      },
+      {
+        "id": "schwann",
+        "model": "schwann",
+        "meshes": 16,
+        "geometries": 16,
+        "labels": 4
+      },
+      {
+        "id": "microglia",
+        "model": "microglia",
+        "meshes": 45,
+        "geometries": 29,
+        "labels": 1
+      },
+      {
+        "id": "ependymocyte",
+        "model": "ependymocyte",
+        "meshes": 182,
+        "geometries": 182,
+        "labels": 3
+      },
+      {
+        "id": "satellite",
+        "model": "satellite",
+        "meshes": 30,
+        "geometries": 30,
+        "labels": 3
+      },
+      {
+        "id": "neuropil",
+        "model": "neuropil",
+        "meshes": 37,
+        "geometries": 37,
+        "labels": 3
+      },
+      {
+        "id": "synapse",
+        "model": "synapse",
+        "meshes": 31,
+        "geometries": 31,
+        "labels": 3
+      },
+      {
+        "id": "axon",
+        "model": "axon",
+        "meshes": 14,
+        "geometries": 14,
+        "labels": 4
+      },
+      {
+        "id": "dendrite",
+        "model": "dendrite",
+        "meshes": 29,
+        "geometries": 29,
+        "labels": 2
+      },
+      {
+        "id": "myelin",
+        "model": "myelin",
+        "meshes": 14,
+        "geometries": 14,
+        "labels": 4
+      },
+      {
+        "id": "node",
+        "model": "node",
+        "meshes": 14,
+        "geometries": 14,
+        "labels": 4
+      },
+      {
+        "id": "nerve",
+        "model": "nerve",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "paraneurium",
+        "model": "paraneurium",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "epineurium",
+        "model": "epineurium",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "perineurium",
+        "model": "perineurium",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "endoneurium",
+        "model": "endoneurium",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "fascicle",
+        "model": "fascicle",
+        "meshes": 315,
+        "geometries": 315,
+        "labels": 9
+      },
+      {
+        "id": "sensory-ganglion",
+        "model": "sensory-ganglion",
+        "meshes": 116,
+        "geometries": 116,
+        "labels": 4
+      },
+      {
+        "id": "autonomic-ganglion",
+        "model": "autonomic-ganglion",
+        "meshes": 86,
+        "geometries": 86,
+        "labels": 5
+      },
+      {
+        "id": "enteric",
+        "model": "enteric",
+        "meshes": 256,
+        "geometries": 256,
+        "labels": 4
+      },
+      {
+        "id": "meissner",
+        "model": "meissner",
+        "meshes": 256,
+        "geometries": 256,
+        "labels": 4
+      },
+      {
+        "id": "auerbach",
+        "model": "auerbach",
+        "meshes": 256,
+        "geometries": 256,
+        "labels": 4
+      }
+    ],
+    "hierarchy_and_breadcrumbs": [
+      "head",
+      "meninges",
+      "cortex",
+      "gray-matter",
+      "neuropil",
+      "neuron",
+      "synapse"
+    ],
+    "camera_buttons_rotation_mouse_pan_touch_pinch_pan": true,
+    "touch_label_selection_and_toggle": true,
+    "touch_mesh_raycast_selection": true,
+    "actual_clipping_planes": {
+      "sagittal": {
+        "normal": [
+          -1,
+          0,
+          0
+        ],
+        "positions": [
+          -50,
+          50
+        ]
+      },
+      "coronal": {
+        "normal": [
+          0,
+          0,
+          -1
+        ],
+        "positions": [
+          -50,
+          50
+        ]
+      },
+      "axial": {
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "positions": [
+          -50,
+          50
+        ]
+      }
+    },
+    "layers_opacity_isolation": true,
+    "meninges_explosion_and_traversal": true,
+    "csf_particle_motion_pause_speed": true,
+    "stain_render_hashes": {
+      "natural": "a69aca9e8a9fbeb17de0697310ecf8fb5a8e9aeb0d286e4fae1d50dda9c8dc5c",
+      "hes": "175fd6ad048e434c034d60280c56df45aaa925cc182fc00469a621b9a638a8b3",
+      "toluidine": "7c7f76e23134947bfcbc343470bff2134fb0317b56b9044f4f7532fab1aec2fe",
+      "luxol": "d58036c2121e3accfa6ecd8f62a7583c8c8f55dc09c60633193425dd001a63d9",
+      "masson": "08e4ef40b53d39e198268cd74e07dd2951a4f006ceb101e612ff98d7f9c7594f"
+    },
+    "microglia_morphology_control": true,
+    "comparison_side_by_side_geometry": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "left": {
+          "x": 51.390625,
+          "y": -1879.3125,
+          "width": 659.609375,
+          "height": 533
+        },
+        "right": {
+          "x": 729,
+          "y": -1879.3125,
+          "width": 659.609375,
+          "height": 533
+        }
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "left": {
+          "x": 36.828125,
+          "y": -1885.3125,
+          "width": 466.171875,
+          "height": 533
+        },
+        "right": {
+          "x": 521,
+          "y": -1885.3125,
+          "width": 466.171875,
+          "height": 533
+        }
+      },
+      {
+        "width": 834,
+        "height": 1194,
+        "left": {
+          "x": 30.1875,
+          "y": -1885.3125,
+          "width": 377.8125,
+          "height": 533
+        },
+        "right": {
+          "x": 426,
+          "y": -1885.3125,
+          "width": 377.8125,
+          "height": 533
+        }
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "graywhite",
+        "model": "white-matter"
+      },
+      {
+        "id": "arrangement",
+        "model": "spinal-cord"
+      },
+      {
+        "id": "myelin",
+        "model": "schwann"
+      },
+      {
+        "id": "ganglia",
+        "model": "autonomic-ganglion"
+      },
+      {
+        "id": "barriers",
+        "model": "blood-csf"
+      },
+      {
+        "id": "envelopes",
+        "model": "spinal-meninges"
+      }
+    ],
+    "quiz_empty_validation_guard_and_wrong_answer_correction": true,
+    "original_qrm_correct_ui_and_structure_links": [
+      "original-organisation",
+      "original-grise",
+      "original-neuropile",
+      "original-blanche",
+      "original-meninges",
+      "original-interfaces",
+      "original-glies",
+      "original-nerf",
+      "original-perinevre",
+      "original-ganglions",
+      "original-enterique",
+      "original-lcs"
+    ],
+    "local_pdf_verification": "passed",
+    "same_size_pdf_hash_rejection": true,
+    "invalid_pdf_rejection": true,
+    "responsive_views": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "overflow": false
+      },
+      {
+        "width": 1366,
+        "height": 900,
+        "overflow": false
+      },
+      {
+        "width": 1194,
+        "height": 834,
+        "overflow": false
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "overflow": false
+      },
+      {
+        "width": 834,
+        "height": 1194,
+        "overflow": false
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "overflow": false
+      },
+      {
+        "width": 320,
+        "height": 800,
+        "overflow": false
+      }
+    ],
+    "platform_navigation": true,
+    "graceful_without_webgl": true,
+    "no_javascript_errors_no_http_errors_no_remote_runtime": true
+  },
+  "input_sha256": {
+    "histologie/neuroscope/anatomy-data.js": "d1829b5a724bae4033e691fd96540ed51404007c7da42368eea1b453d4afbf97",
+    "histologie/neuroscope/app.js": "1e65e5f3b0f8f8b71bbd587f39bcb0456c82cc06f64f3a7a92bc7f79dbb61c7c",
+    "histologie/neuroscope/assets/vendor/OrbitControls.js": "1a26c7e8e7ac703a81f1938902eebf45c0ceecf4c6012dda11f90582064e8a4e",
+    "histologie/neuroscope/assets/vendor/three.module.js": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+    "histologie/neuroscope/content.js": "7c2c457586e9c93bfad95385fb5b3495dd1f2e193d4b3ba32d77d7593090118d",
+    "histologie/neuroscope/index.html": "c33697e2972b71ed2d0135f588b7289a6a1298df80d7d412c34afeb4d6f682c9",
+    "histologie/neuroscope/models-anatomy.js": "cbaf61b5e1bbd7465e07d42f214c9be2f32d55472786e3f8892a25b1639071a4",
+    "histologie/neuroscope/models-micro.js": "cd98efd59b7e579c90a25c49b1c58ba76be3fdfa179211ff8198c3b00eea3337",
+    "histologie/neuroscope/scene.js": "aaf9c5faab3882eb29237ebaa4e6e2c438707009ade6010529bb4617f3d899db",
+    "histologie/neuroscope/styles.css": "6ae7b9925605b07688059288fd3d0722e4c50b697fb19fbe4b48bf2b2f121fc9",
+    "scripts/neuroscope_qa.py": "62901bfdfd477c2a5e40416ba46e1681a200cbef305bb546b7ed086aa49398ca"
+  },
+  "browser_version": "154.0.8037.57",
+  "finished_at_utc": "2026-10-17T21:29:32.796317+00:00",
+  "javascript_errors": [],
+  "http_errors": []
+}
