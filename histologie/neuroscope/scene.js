@@ -427,11 +427,22 @@ export class NeuroScene {
     this.requestRender();
   }
 
-  setLabels(enabled) {
-    this.labelsEnabled = Boolean(enabled);
-    this.requestRender();
-    this._notify(true);
+  
+setLabels(enabled) {
+  this.labelsEnabled = Boolean(enabled);
+
+  if (!this.labelsEnabled) {
+    for (const label of this.labelNodes) {
+      label.visible = false;
+      label.button.hidden = true;
+      label.leader.hidden = true;
+    }
   }
+
+  this.requestRender();
+  this._notify(true);
+}
+
 
   setLayer(id, { visible, opacity } = {}) {
     const layer = this.layers.get(id);
